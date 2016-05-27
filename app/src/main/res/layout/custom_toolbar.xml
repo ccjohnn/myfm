@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_custom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    android:fitsSystemWindows="true"
+    android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    >
+
+    <!-- 当status bar为透明或半透明时(4.4以上),系统会设置view的paddingTop值为一个适合的值
+    (status bar的高度)让view的内容不被上拉到状态栏，当在不占据status bar的情况下(4.4以下
+    )会设置paddingTop值为0(因为没有占据status bar所以不用留出空间)-->
+    <!--app全局命名空间，对于库中没有的属性-->
+
+</android.support.v7.widget.Toolbar>
+  <!--  android:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->

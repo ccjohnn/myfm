@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+
+android {
+
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+    useLibrary 'org.apache.http.legacy'
+    //android 6.0 don't support the above jar
+    //so we must add this item
+    defaultConfig {
+        applicationId "info.doufm.android"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 4
+        versionName "3.0.0"
+    }
+    signingConfigs {
+        debug {
+            storeFile file("doufm.keystore")
+            storePassword "android_doufm"
+            keyAlias "doufm"
+            keyPassword "android_doufm"
+        }
+        myConfig {
+            storeFile file("doufm.keystore")
+            storePassword "android_doufm"
+            keyAlias "doufm"
+            keyPassword "android_doufm"
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.myConfig
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
+}
+
+dependencies {
+
+    compile(name: 'android-volley-debug', ext: 'aar')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'cn.pedant.sweetalert:library:1.3'
+    compile 'io.realm:realm-android:0.83.0'
+
+}
+
