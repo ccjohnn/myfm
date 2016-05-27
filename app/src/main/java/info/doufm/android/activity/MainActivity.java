@@ -101,6 +101,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
 
         Log.v(TAG, "onCreate");
+        Log.v(TAG, "onCreate");
 
         setContentView(R.layout.activity_main);
         System.out.println("test git");
